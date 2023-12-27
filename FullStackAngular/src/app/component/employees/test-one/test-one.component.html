@@ -1,0 +1,46 @@
+
+<div class="outer">
+    <form class="container  col-sm-6"
+   #form="ngForm" (ngSubmit)="addTestOne()">
+      <div class="container my-5" >
+          <h1 class="mb-3">Add New Employee</h1>
+      </div>
+      
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile Number</label>
+        <input type="number"
+        name="name" [(ngModel)]="testOne.mobileNumber"
+         class="form-control"  id="mobile" aria-describedby="emailHelp">
+       </div>
+  
+    
+  
+       <div class="mb-3">
+          <label for="Email" class="form-label">Email</label>
+          <input type="email"
+          name="email" [(ngModel)]="testOne.email"
+          class="form-control"  id="Email" aria-describedby="emailHelp">
+         </div>
+
+         <div class="mb-3">
+            <label for="PresentAddress" class="form-label">Present Address</label>
+            <input type="text"
+            name="PresentAddress" [(ngModel)]="testOne.employeeAddresses.presentAddresses.village"
+            class="form-control" id="PresentAddress"   aria-describedby="emailHelp">
+           </div>
+
+           <div class="mb-3">
+            <label for="ParmanentAddress" class="form-label">Parmanent Address</label>
+            <input type="text"
+            name="ParmanentAddress" [(ngModel)]="testOne.employeeAddresses.parmanentAddresses.village"
+            class="form-control"  id="ParmanentAddress" aria-describedby="emailHelp">
+           </div>
+  
+         
+  
+    
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

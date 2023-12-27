@@ -1,0 +1,71 @@
+<section class="vh-1000" style="background-color: #508bfc;">
+  <div  >
+    <div >
+      <div >
+        <div >
+          <div class="card-body p-5 text-center">
+            <div class="">
+              <form class="container  col-sm-5"
+              
+             #form="ngForm" (ngSubmit)="employeeRegister()">
+                <div class="container my-5" >
+                    <h1 class="register-container mb-3 h3 text-center">Register Now</h1>
+                </div>
+          
+          
+          
+                <div class="mb-3">
+                  <label for="mobile" class="form-label"></label>
+                  <input type="number" placeholder="Mobile Number"
+                  name="number" [(ngModel)]="registerRequest.mobileNumber"
+                 class="form-control"  id="mobile" aria-describedby="emailHelp"
+                 ngModel #number="ngModel" class="form-control" [ngClass]="{ 'is-invalid': form.submitted && number.invalid }" required>
+                     <div *ngIf="form.submitted && number.errors" class="invalid-feedback">
+                      <div *ngIf="number.errors">Mobile Number  is required</div>
+                  </div>
+                   </div>
+
+          
+                   <div class="mb-3">
+                      <label for="name" class="form-label"></label>
+                      <input placeholder="Full Name" type="text"name="name" [(ngModel)]="registerRequest.name"
+                     class="form-control"  id="name" aria-describedby="emailHelp"
+
+                     ngModel #name="ngModel" class="form-control" [ngClass]="{ 'is-invalid': form.submitted && name.invalid }" required>
+                     <div *ngIf="form.submitted && name.errors" class="invalid-feedback">
+                      <div *ngIf="name.errors">Name is required</div>
+                  </div>
+                       </div>
+          
+                       <div class="mb-3">
+                          <label for="email" class="form-label"></label>
+                          <input placeholder="Email" type="email"name="email" [(ngModel)]="registerRequest.email"
+                         class="form-control"  id="email" aria-describedby="emailHelp"
+                         ngModel #email="ngModel" class="form-control" [ngClass]="{ 'is-invalid': form.submitted && email.invalid }" required>
+                     <div *ngIf="form.submitted && email.errors" class="invalid-feedback">
+                      <div *ngIf="email.errors">Email is required</div>
+                  </div>
+                           </div>
+          
+                           <div class="mb-3">
+                              <label for="password" class="form-label"></label>
+                              <input placeholder="Password" type="password"name="password" [(ngModel)]="registerRequest.password"
+                             class="form-control"  id="password" aria-describedby="emailHelp"
+                             ngModel #password="ngModel" class="form-control" [ngClass]="{ 'is-invalid': form.submitted && password.invalid }" required>
+                         <div *ngIf="form.submitted && password.errors" class="invalid-feedback">
+                          <div *ngIf="password.errors">Password is required</div>
+                  </div>
+                               </div>
+          
+          
+                               <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                               <button  type="submit" class="btnb">Submit</button>
+          
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

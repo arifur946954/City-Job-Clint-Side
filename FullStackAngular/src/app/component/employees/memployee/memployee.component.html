@@ -1,0 +1,135 @@
+
+<div class="outer">
+    <form class="container  col-sm-6"
+    
+   #form="ngForm" (ngSubmit)="addListEmp()">
+      <div class="container my-5" >
+          <h1 class="mb-3">Add New Employee</h1>
+      </div>
+
+      <div>
+        <h2>Employee Details</h2>
+        <p>Name: {{ listData.email }}</p>
+        <p>Present Addresses:</p>
+        <ul>
+          <li *ngFor="let presentAddress of listData.employeeAddresses.presentAddresses">
+            House: {{ presentAddress.village }}, Town: {{ presentAddress.town }}
+          </li>
+        </ul>
+      </div>
+
+
+
+
+
+
+
+      
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Mobile Number</label>
+        <input type="number"
+       
+        ngForm.get
+        name="name" [(ngModel)]="listData.mobileNumber"
+      
+         class="form-control"  id="mobile" aria-describedby="emailHelp">
+         
+       </div>
+  
+    
+  
+       <div class="mb-3">
+          <label for="Email" class="form-label">Email</label>
+          <input type="email"  
+          name="email"  [(ngModel)]="listData.email"
+        
+         class="form-control"  id="Email" aria-describedby="emailHelp"  required>
+         <!-- <div *ngIf="isEmailInvalid()" class="text-danger">
+            Email is required
+          </div> -->
+          
+        <div >
+          
+        </div>
+         </div>
+
+         <div class="mb-3">
+            <label for="birthDate" class="form-label">BirthDate</label>
+            <input type="date"
+            name="birthDate" [(ngModel)]="listData.birthDate"
+            class="form-control"  id="birthDate" aria-describedby="emailHelp">
+           </div>
+
+
+         <div class="presentAddress">
+            <tr>
+                <td>
+                    <div class="mb-3">
+                        <label for="Town0" class="form-label">Towns</label>
+                        <input type="text"
+                        name="Town0" [(ngModel)]="listData.employeeAddresses.presentAddresses[0].town"
+                        class="form-control" id="Town0"   aria-describedby="emailHelp">
+                       </div>
+                </td>
+                <td>
+                    <div class="mb-3">
+                        <label for="Village0" class="form-label">Village</label>
+                        <input type="text"
+                        name="Village0" [(ngModel)]="listData.employeeAddresses.presentAddresses[0].village"
+                        class="form-control"  id="Village0" aria-describedby="emailHelp">
+                       </div>
+                </td>
+            </tr>
+        <!-- second table -->
+        <tr>
+            <td>
+                <div class="mb-3">
+                    <label for="Town1" class="form-label">Towns</label>
+                    <input type="text"
+                    name="Town1" [(ngModel)]="listData.employeeAddresses.presentAddresses[1].town"
+                    class="form-control" id="Town1"   aria-describedby="emailHelp">
+                   </div>
+            </td>
+            <td>
+                <div class="mb-3">
+                    <label for="Village1" class="form-label">Village</label>
+                    <input type="text"
+                    name="Village1" [(ngModel)]="listData.employeeAddresses.presentAddresses[1].village"
+                    class="form-control"  id="Village1" aria-describedby="emailHelp">
+                   </div>
+            </td>
+        </tr>
+        <!-- third table -->
+        <tr>
+            <td>
+                <div class="mb-3">
+                    <label for="Town2" class="form-label">Towns</label>
+                    <input type="text"
+                    name="Town2" [(ngModel)]="listData.employeeAddresses.presentAddresses[2].town"
+                    class="form-control" id="Town2"   aria-describedby="emailHelp">
+                   </div>
+            </td>
+            <td>
+                <div class="mb-3">
+                    <label for="Village2" class="form-label">Village</label>
+                    <input type="text"
+                    name="Village2" [(ngModel)]="listData.employeeAddresses.presentAddresses[2].village"
+                    class="form-control"  id="Village2" aria-describedby="emailHelp">
+                   </div>
+            </td>
+        </tr>
+
+         </div>
+
+         
+
+          
+  
+         
+  
+    
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

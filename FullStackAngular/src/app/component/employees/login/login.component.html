@@ -1,0 +1,82 @@
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+                        <div class="">
+                            <form class="container  "
+                        
+                            
+                            
+                            #form="ngForm" (ngSubmit)="employeeLogin()">
+                              <div class="container my-5" >
+                               
+                                  <h1 class="mb-3 h3 text-center">Login Now</h1>
+                              </div>
+                        
+                                     <div class="mb-3">
+                                        <label for="email" class="form-label"></label>
+                                        <input placeholder="email" type="email"name="email" [(ngModel)]="loginRequest.email" 
+                                        ngModel #email="ngModel" class="form-control"
+                                        [ngClass]="{ 'is-invalid': form.submitted && email.invalid }" required
+                                        class="form-control"  id="email" aria-describedby="emailHelp" required minlength="4">
+
+                                        <div *ngIf="form.submitted && email.errors" class="invalid-feedback">
+                                            <div *ngIf="email.errors">Email is required</div>
+                                        </div>
+                                         </div>
+                                        
+                        
+                                         <div class="mb-3">
+                                            <label for="password" class="form-label"></label>
+                                            <input placeholder="password" type="password"name="password" [(ngModel)]="loginRequest.password"
+                                           class="form-control"  id="password" aria-describedby="emailHelp"
+                                           ngModel #password="ngModel" class="form-control"
+                                           [ngClass]="{ 'is-invalid': form.submitted && password.invalid }" required minlength="6">
+
+                                           <div *ngIf="form.submitted && password.errors" class="invalid-feedback">
+                                            <div *ngIf="password.errors">Password is required</div>
+                                            <div *ngIf="password.errors">Password must be at least 6 characters</div>
+                                        </div>
+                                             </div>
+                        
+                                            <div>Not register yet <a class="regitext" id="Register" routerLink="/employees/register">Register</a></div>
+                                             <button [disabled]="loginForm.invalid" type="submit" class="btnb btn btn-primary">Submit</button>
+                                             <!-- <button [disabled]="loginForm.invalid" type="submit" class="btnb">Submit</button> -->
+                        
+                                             <div *ngIf="">
+                                                <div *ngIf="loginForm && form.valid">Form submitted successfully!</div>
+                                                <div *ngIf="loginForm && form.invalid">Form contains errors. Please fix them.</div>
+                                              </div>
+
+
+                                              <div *ngFor="let message of consoleMessages" 
+                                              [ngClass]="{'success-message': message.includes('success'),
+                                              'error-message': message.includes('error')}">
+                                                {{ message }}
+                                              </div>
+                              </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
